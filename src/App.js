@@ -7,20 +7,26 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import SingleProduct from "./components/SingleProduct";
 import ErrorPage from "./components/ErrorPage";
+import { GlobalStyle } from "./GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import theme from "./theme";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/singleproduct/:id" element={<SingleProduct />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/singleproduct/:id" element={<SingleProduct />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 };
 
