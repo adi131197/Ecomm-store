@@ -10,12 +10,14 @@ import ErrorPage from "./components/ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
+import Header from "./components/Globals/Header";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyle />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
