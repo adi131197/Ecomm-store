@@ -1,7 +1,8 @@
 import React from "react";
+import HeroSection from "./HeroSection";
 
 const About = () => {
-  return <div>About Page</div>;
+  return <HeroSection />;
 };
 
 export default About;
